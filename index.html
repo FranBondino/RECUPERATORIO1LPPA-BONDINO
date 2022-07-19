@@ -31,13 +31,13 @@
                         <div class="input-box">
                             <div class="columna-1">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" placeholder="Ingrese su nombre" id="nombreInput" minlength="3">
+                                <input type="text" name="nombre" placeholder="Ingrese su nombre" id="nombreInput">
                                 <p id="nameError" class="hiddenError">Debe poseer como minimo tres letras</p>
                                 <label for="apellido">Apellido</label>
-                                <input type="text" name="apellido" placeholder="Ingrese su apellido" id="apellidoInput" minlength="3">
+                                <input type="text" name="apellido" placeholder="Ingrese su apellido" id="apellidoInput">
                                 <p id="surNameError" class="hiddenError">Debe poseer como minimo tres letras</p>
                                 <label for="email">Email</label>
-                                <input type="email" name="email" placeholder="Ingrese su email" id="mailInput"">
+                                <input type="email" name="email" placeholder="Ingrese su email" id="mailInput">
                                 <p id="emailError" class="hiddenError">Debe poseer formato de mail</p>
                             </div>
                             <div class="columna-2">
@@ -45,7 +45,7 @@
                                 <input type="email" name="repeatEmail" placeholder="Ingrese nuevamente su mail" id="repeatMailInput">
                                 <p id="repeatEmailError" class="hiddenError">Ambos mails deben coincidir</p>
                                 <label for="password">Contraseña</label>
-                                <input type="password" name="password" placeholder="Ingrese su contraseña" id="passwordInput" minlength="7">
+                                <input type="password" name="password" placeholder="Ingrese su contraseña" id="passwordInput">
                                 <p id="passwordError" class="hiddenError">Debe ser mayor a 6 caracteres</p>
                                 <label for="password">Repetir contraseña</label>
                                 <input type="password" name="repeatPassword" placeholder="Ingrese nuevamente su contraseña" id="repeatPasswordInput">
@@ -60,14 +60,11 @@
                 </form>
             </div>
             <div id="modal-exito" class="modal">
-
                 <div class="modal-content">
                   <span class="close">&times;</span>
                   <p id="mensaje-parpadeante">Registrado con éxito!</p>
-                </div>
-              
+                </div>    
             </div>
-
         </section>
         <footer>
             <p>Parcial 1 LPPA</p>

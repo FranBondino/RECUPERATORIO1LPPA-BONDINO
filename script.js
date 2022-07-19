@@ -97,7 +97,7 @@ window.onload = function() {
   
     function validatePassword(e) {
         var x = passwordVar.value;
-        if (x.lenght < 7) {
+        if (x.length < 7) {
             passwordError.classList.remove('hiddenError')
         }
     }
