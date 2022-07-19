@@ -20,17 +20,17 @@ window.onload = function() {
     var success = true;
   
   //form reset
-  formVar.addEventListener('reset', e => {
-    cleanReset();
-  })
+    formVar.addEventListener('reset', e => {
+        cleanReset();
+    })
   
-  function cleanReset (){
-    var errorArray = [nameError,surNameError,edadError,emailError,genderError,temaError]
-          i=0;
-          for(i;i<(errorArray.length);i++){ 
+    function cleanReset(){
+        var errorArray = [nameError,surNameError,emailError,repeatMailError,passwordError,repeatPasswordError]
+            i=0;
+            for(i;i<(errorArray.length);i++){ 
               errorArray[i].classList.add('hiddenError');
-          }
-  }
+            }
+    }
   
   
   
@@ -50,6 +50,12 @@ window.onload = function() {
     function openModal(){
       if(success) {
         modal.style.display="block";
+        nameVar.value="";
+        surNameVar.value="";
+        emailVar.value="";
+        repeatMail.value="";
+        passwordVar.value="";
+        repeatPassword.value="";
       }
     }
   
@@ -59,53 +65,58 @@ window.onload = function() {
   
     // Validation functions
     function validateName(e) {
-      var x = nameVar.value;
-      if(x.length < 3) {
-          nameError.classList.remove('hiddenError');
-          success = false;
-        }
-      }
+        var expReg = /[a-zA-Z]/
+        var x = nameVar.value;
+        var esValido = expReg.test(x);
+        if(x.length < 3 || esValido==false) {
+            nameError.classList.remove('hiddenError');
+            success = false;
+            }
+    }
+
     function validateSurName(e) {
-      var x = surNameVar.value;
-      if(x.length < 3) {
+        var expReg = /[a-zA-Z]/
+        var x = surNameVar.value;
+        var esValido = expReg.test(x);
+        if(x.length < 3 || esValido==false) {
           surNameError.classList.remove('hiddenError');
           success = false;
         }
-      }
+    }
   
     function validateEmail(e) {
-      var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-      var x = emailVar.value;
-      var esValido = expReg.test(x);
-      if(esValido==false) {
+        var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        var x = emailVar.value;
+        var esValido = expReg.test(x);
+        if(esValido==false) {
           emailError.classList.remove('hiddenError');
           success = false;
         }
-      }
+    }
 
-      function validateEmailRepeat(e) {
+    function validateEmailRepeat(e) {
         if (repeatMail.value != emailVar.value) {
             repeatMailError.classList.remove('hiddenError');
         }
-      }
+    }
   
-      function validatePassword(e) {
+    function validatePassword(e) {
         var x = passwordVar.value;
         if (x.lenght < 7) {
             passwordError.classList.remove('hiddenError')
         }
-      }
+    }
 
-      function validatePasswordRepeat(e) {
+    function validatePasswordRepeat(e) {
         if (repeatPassword.value != passwordVar.value) {
             repeatPasswordError.classList.remove('hiddenError');
         }
-      }
+    }
   
       //para cerrar el modal cuando click X
-      span.onclick = function() {
+    span.onclick = function() {
         modal.style.display = "none";
-        }
+    }
     
     //para cerrar modela click en pantalla
     window.onclick = function(event) {
@@ -114,42 +125,39 @@ window.onload = function() {
         }
     }
   
-     
   
+    //limpia errores cuando se hace focus
   
+    nameVar.addEventListener('focus', clearNameError);
   
+    surNameVar.addEventListener('focus', clearSurNameError);
   
-      nameVar.addEventListener('focus', clearNameError);
+    emailVar.addEventListener('focus', clearEmailError);
   
-      surNameVar.addEventListener('focus', clearSurNameError);
-  
-      emailVar.addEventListener('focus', clearEmailError);
-  
-      repeatMail.addEventListener('focus', clearRepeatEmailError);
+    repeatMail.addEventListener('focus', clearRepeatEmailError);
 
-      passwordVar.addEventListener('focus', clearPasswordError)
+    passwordVar.addEventListener('focus', clearPasswordError)
       
-      repeatPasswordError.addEventListener('focus', clearRepeatPasswordError)
+    repeatPasswordError.addEventListener('focus', clearRepeatPasswordError)
 
       
-  
-      function clearNameError(e) {
-      nameError.classList.add('hiddenError');
-      }
-      function clearSurNameError(e) {
-      surNameError.classList.add('hiddenError');
-      }
-      function clearEmailError(e) {
-      emailError.classList.add('hiddenError');
-      }
-      function clearRepeatEmailError(e) {
-      repeatMailError.classList.add('hiddenError');
-      }
-      function clearPasswordError(e) {
-      passwordError.classList.add('hiddenError');
-      }
-      function clearRepeatPasswordError(e) {
-      repeatPasswordError.classList.add('hiddenError');
-      }
-  
+    function clearNameError(e) {
+        nameError.classList.add('hiddenError');
     }
+    function clearSurNameError(e) {
+        surNameError.classList.add('hiddenError');
+    }
+    function clearEmailError(e) {
+        emailError.classList.add('hiddenError');
+    }
+    function clearRepeatEmailError(e) {
+        repeatMailError.classList.add('hiddenError');
+    }
+    function clearPasswordError(e) {
+        passwordError.classList.add('hiddenError');
+    }
+    function clearRepeatPasswordError(e) {
+        repeatPasswordError.classList.add('hiddenError');
+    }
+  
+}

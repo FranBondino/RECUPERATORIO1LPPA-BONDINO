@@ -45,31 +45,32 @@ body {
     border:solid 6px white;
     border-radius: 6px;
     padding: 20px;
- }
+}
  
- .form-container form .title {
+.form-container form .title {
      font-size: 35px;
      font-weight: 700;
      display: flex;
      flex-direction: column;
      align-items: center;
- }
+}
  
- .form-container form .user-details{
+.form-container form .user-details{
      display: flex;
      flex-direction: column;
      align-items: flex-start;
- }
+}
  
- .user-details .input-box {
+.user-details .input-box {
     padding: 10px 0;
     width: 100%;
- }
+}
  
- .input-box label {
+.input-box label {
      font-size: x-large;
- }
- .input-box input {
+}
+
+.input-box input {
      height: 45px;
      margin: 10px 0;
      width: 100%;
@@ -77,13 +78,14 @@ body {
      border-radius: 5px;
      border: 2px solid whitesmoke;
      font-size: 16px;
- }
+}
 
- form .buttons {
+form .buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 form .buttons input {
     width: 100%;
     background: #1f53c5;
@@ -94,9 +96,12 @@ form .buttons input {
     font-size: 25px;
     border-radius: 5px;
 }
+
+/*ERRORES*/
 .hiddenError {
     display: none;
 }
+
 .input-box p{
     font-size: medium;
     color: red;
@@ -116,43 +121,43 @@ form .buttons input {
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
-  }
+}
   
   
-  .modal-content {
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
-  }
+}
 
-  .modal-content p{
+.modal-content p {
       display: flex;
       justify-content: center;
       text-transform: uppercase;
       font-size: larger;
       font-family:  Geneva, Verdana, sans-serif;
       font-weight: 600;
-  }
+}
   
   
-  .close {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  /*FOOTER*/
-footer{
+/*FOOTER*/
+footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -162,5 +167,4 @@ footer{
     color: white;
     margin-top: 10px;
     width: 100%;
-
 }
