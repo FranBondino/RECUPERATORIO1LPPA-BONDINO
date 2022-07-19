@@ -19,7 +19,7 @@ window.onload = function() {
     var span = document.getElementsByClassName("close")[0];
     var success = true;
   
-  //form reset
+    //form reset
     formVar.addEventListener('reset', e => {
         cleanReset();
     })
@@ -32,9 +32,7 @@ window.onload = function() {
             }
     }
   
-  
-  
-  //submit validation
+    //submit validation
     formVar.addEventListener('submit', e => {
         e.preventDefault();
         success = true;
@@ -59,10 +57,7 @@ window.onload = function() {
       }
     }
   
-  
-    
-  
-  
+
     // Validation functions
     function validateName(e) {
         var expReg = /[a-zA-Z]/
@@ -113,7 +108,8 @@ window.onload = function() {
         }
     }
   
-      //para cerrar el modal cuando click X
+
+    //para cerrar el modal cuando click X
     span.onclick = function() {
         modal.style.display = "none";
     }
@@ -127,7 +123,6 @@ window.onload = function() {
   
   
     //limpia errores cuando se hace focus
-  
     nameVar.addEventListener('focus', clearNameError);
   
     surNameVar.addEventListener('focus', clearSurNameError);
@@ -159,5 +154,4 @@ window.onload = function() {
     function clearRepeatPasswordError(e) {
         repeatPasswordError.classList.add('hiddenError');
     }
-  
 }
